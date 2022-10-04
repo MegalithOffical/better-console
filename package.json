@@ -1,0 +1,25 @@
+{
+  "name": "@megalith01/quicklogger",
+  "version": "0.0.1",
+  "description": "Colorfull and Easy to use Console logger!",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MegalithOffical/QuickLogger.git"
+  },
+  "keywords": [
+    "console"
+  ],
+  "author": "Megalith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MegalithOffical/QuickLogger/issues"
+  },
+  "homepage": "https://github.com/MegalithOffical/QuickLogger#readme",
+  "dependencies": {
+    "cli-color": "^2.0.3"
+  }
+}
