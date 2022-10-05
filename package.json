@@ -1,6 +1,6 @@
 {
   "name": "@megalith01/quicklogger",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Colorfull and Easy to use Console logger!",
   "main": "main.js",
   "scripts": {
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/MegalithOffical/QuickLogger#readme",
   "dependencies": {
+    "chalk": "^4.1.2",
     "cli-color": "^2.0.3"
   }
 }

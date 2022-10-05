@@ -1,26 +1,43 @@
 var clc = require("cli-color");
+var chalk = require("chalk")
 
 class QuickLogger {
     constructor(options) {
-        if(options === undefined) this.name = "QuickLogger";
-        else this.name = options.name;
+         this.name = options.name || "QuickLogger";  
+         this.driver = options.driver || "chalk";      
     }
 
     log(message) {
-        return console.log(clc.bgWhiteBright(`[${this.name}] => ${message}`))
+        if(this.driver.toLowerCase() === "chalk") {
+            return console.log(chalk.white(`[${this.name}] => ${message}`))
+        } else if(this.driver.toLowerCase() === "cli-color") {
+            return console.log(clc.bgWhiteBright(`[${this.name}] => ${message}`))
+        }
     }
 
     error(message) {
-        new Error(clc.bgWhiteBright(`[${this.name}] => ${message}`))
-        return console.error(clc.bgRedBright(`[${this.name} ERROR] => ${message}`))
+        if(this.driver.toLowerCase() === "chalk") {
+         return console.error(chalk.red(`[${this.name} ERROR] => ${message}`))   
+        } else if(this.driver.toLowerCase() === "cli-color") {
+         return console.error(clc.bgRedBright(`[${this.name} ERROR] => ${message}`))   
+        }
     }
 
     warn(message) {
-        return console.warn(clc.bgRedBright(`[${this.name} WARN] => ${message}`))
+        if(this.driver.toLowerCase() === "chalk") {
+            return console.warn(chalk.yellow(`[${this.name} WARNING] => ${message}`))  
+        } else if(this.driver.toLowerCase() === "cli-color") {
+          return console.warn(clc.bgRedBright(`[${this.name} WARN] => ${message}`))  
+        }
     }
 
     debug(message) {
-        return console.debug(clc.bgYellow(`[${this.name} DEBUG] => ${message}`))
+        if(this.driver.toLowerCase() === "chalk") {
+        return console.debug(chalk.yellow(`[${this.name} DEBUG] => ${message}`))
+        } else if(this.driver.toLowerCase() === "cli-color") {
+         return console.debug(clc.bgYellow(`[${this.name} DEBUG] => ${message}`))   
+        }
+        
     }
 
 }
