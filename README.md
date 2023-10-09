@@ -1,3 +1,4 @@
+# This module is depracated. Please use my new module: (clog-utils)[https://github.com/MegalithOffical/clog-utils]
 # QuickLogger
  Colorful and Easy to use Console logger!
  
